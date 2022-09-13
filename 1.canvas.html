@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <!-- html中属性宽高是指坐标系大小，x:(0,512) y:(0,512) -->
+        <!-- css 属性宽高是指样式大小宽高 -->
+        <!-- 如果我们不设置 Canvas 元素的样式，那么 Canvas 元素的画布宽高就会等于它的样式宽高的像素值，也就是 512px -->
+        <canvas
+            width="512"
+            height="512"
+            style="background-color: #b4d9fb"
+        ></canvas>
+        <!-- 左上角为原点，向左为x正方向，向下为y正方向 -->
+    </body>
+    <script>
+        const canvas = document.querySelector("canvas");
+        // 获取上下文对象
+        const context = canvas.getContext("2d");
+        // 填充颜色
+        context.fillStyle = "#ffb7da";
+        // 开始绘制的路径，开始绘制图形
+        context.beginPath();
+        // 绘图指令 ===>  中心点绘制一个 100 * 100 的正方形
+        context.rect(
+            0.5 * canvas.width - 50,
+            0.5 * canvas.height - 50,
+            100,
+            100
+        ); // (x,y,width,height) => xy是左上角坐标
+        // 绘制内容输出到画布(正方形)
+
+        // context.translate(-0.5 * rectSize[0], -0.5 * rectSize[1]); 平移画布
+        // context.translate(0.5 * rectSize[0], 0.5 * rectSize[1]);  恢复平移至原位置
+        context.fill();
+    </script>
+</html>
