@@ -110,3 +110,119 @@ WebGL 从顶点着色器和图元提取像素点给片元着色器执行代码�
 #### 8.向量旋转
 
 > 
+
+
+
+
+
+## 6.glsl语法
+
+### 1.变量名
+
++ **uniform**
+
+  > uniform变量是**外部程序**传递给（vertex和fragment）shader的变量。(shader只能用，不能改)
+  >
+  > uniform变量一般用来表示：变换矩阵，材质，光照参数和颜色等信息。
+
+  ```glsl
+  uniform mat4 viewProjMatrix; //投影+视图矩阵
+  
+  uniform mat4 viewMatrix;        //视图矩阵
+  
+  uniform vec3 lightPosition;     //光源位置
+  
+  uniform float lumaThreshold;
+  
+  uniform float chromaThreshold;
+  
+  uniform sampler2D SamplerY;
+  
+  uniform sampler2D SamplerUV;
+  
+  uniform mat3 colorConversionMatrix;
+  ```
+
++ **attribute**
+
+  > attribute变量是只能在vertex shader中声明和使用的变量。
+  >
+  > 一般用attribute变量来表示一些顶点的数据，如：顶点坐标，法线，纹理坐标，顶点颜色等。
+
+  ```glsl
+  attribute vec4 position;
+  
+  attribute vec2 texCoord;
+  ```
+
++ **varying**
+
+  > varying变量是vertex和fragment shader之间做数据传递用的。一般vertex shader修改varying变量的值，然后fragment shader使用该varying变量的值。
+
+  ```glsl
+  // Vertex shader  
+  
+  attribute vec4 position;
+  
+  attribute vec2 texCoord;
+  
+  uniform float preferredRotation;
+  
+  varying vec2 texCoordVarying;   // Varying in vertex shader
+  
+  void main()
+  
+  {
+  
+  mat4 rotationMatrix = mat4( cos(preferredRotation), -sin(preferredRotation), 0.0, 0.0,
+  
+  sin(preferredRotation),  cos(preferredRotation), 0.0, 0.0,
+  
+  0.0,     0.0, 1.0, 0.0,
+  
+  0.0,     0.0, 0.0, 1.0);
+  
+  gl_Position = position * rotationMatrix;
+  
+  texCoordVarying = texCoord;
+  
+  }
+  
+  // Fragment shader
+  
+  varying highp vec2 texCoordVarying;  // Varying in fragment shader
+  
+  precision mediump float;
+  
+  uniform float lumaThreshold;
+  
+  uniform float chromaThreshold;
+  
+  uniform sampler2D SamplerY;
+  
+  uniform sampler2D SamplerUV;
+  
+  uniform mat3 colorConversionMatrix;
+  
+  void main()
+  
+  {
+  
+  mediump vec3 yuv;
+  
+  lowp vec3 rgb;
+  
+  // Subtract constants to map the video range start at 0
+  
+  yuv.x = (texture2D(SamplerY, texCoordVarying).r - (16.0/255.0))* lumaThreshold;
+  
+  yuv.yz = (texture2D(SamplerUV, texCoordVarying).rg - vec2(0.5, 0.5))* chromaThreshold;
+  
+  rgb = colorConversionMatrix * yuv;
+  
+  gl_FragColor = vec4(rgb,1);
+  
+  }
+  ```
+
+  
