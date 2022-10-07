@@ -53,6 +53,8 @@ WebGL 从顶点着色器和图元提取像素点给片元着色器执行代码�
 
 ### 1.向量
 
+![image-20221007124416913](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221007124416913.png)
+
 > [向量百度百科解释](https://baike.baidu.com/item/向量/1396519)
 
 ![image-20220911211507121](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20220911211507121.png)
@@ -97,9 +99,13 @@ WebGL 从顶点着色器和图元提取像素点给片元着色器执行代码�
 
 ![image-20220911235338002](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20220911235338002.png)
 
-![image-20220911235625527](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20220911235625527.png)
 
 
+![image-20221007123656180](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221007123656180.png)
+
+![image-20221007131206842](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221007131206842.png)
+
+![image-20221007131541744](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221007131541744.png)
 
 #### 7.向量延长
 
