@@ -193,6 +193,8 @@ g h i              c f i
 + 右上角表示（平移），v向量
 + 标准4x4仿射矩阵：左下角为000，右下角为1  ===>      0 0 0 1
 + ⭐公式：X` = X标准仿射矩阵
++ ![image-20221009171057785](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221009171057785.png)
++ ![image-20221009171518400](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221009171518400.png)
 
 ### 3.四元数（Quaternion）
 
