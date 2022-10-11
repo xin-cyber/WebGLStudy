@@ -20,6 +20,8 @@
 
 ![img](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/b5e4f37e1c4fbyy6a2ea10624d143356.jpg)
 
+![image-20221010175047838](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221010175047838.png)
+
 + **光栅**（Raster）：几乎所有的现代图形系统都是基于光栅来绘制图形的，光栅就是指构成图像的像素阵列。
 + **像素**（Pixel）：一个像素对应图像上的一个点，它通常保存图像上的某个具体位置的颜色等信息。
 + **帧缓存**（Frame Buffer）：在绘图过程中，像素信息被存放于帧缓存中，帧缓存是一块内存地址。
@@ -210,6 +212,8 @@ g h i              c f i
 
 ### 1.变量名
 
+> gl_PointSize、gl_Position、gl_FragColor都是内置变量
+
 + **uniform**
 
   > uniform变量是**外部程序**传递给（vertex和fragment）shader的变量。(shader只能用，不能改)
@@ -227,7 +231,7 @@ g h i              c f i
   
   uniform float chromaThreshold;
   
-  uniform sampler2D SamplerY;
+  uniform sampler2D SamplerY;  // 纹理图片的像素数据
   
   uniform sampler2D SamplerUV;
   
