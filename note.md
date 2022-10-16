@@ -319,5 +319,7 @@ g h i              c f i
   
   }
   ```
+### 2.gl.drawArray
 
-  
+  ![image-20221016191041013](../../AppData/Roaming/Typora/typora-user-images/image-20221016191041013.png)
+
