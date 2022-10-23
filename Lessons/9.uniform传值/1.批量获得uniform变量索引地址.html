@@ -93,7 +93,7 @@
     /**
      * 给平行光传入颜色和方向数据，RGB(1,1,1),单位向量(x,y,z)
      **/
-    gl.uniform3f(u_lightColor, 1.0, 1.0, 1.0);
+    gl.uniform3f(u_lightColor, 1.0, 1.0, 1.0); // 三维向量 ==> 3f , 二维向量2f
     //保证向量(x,y,z)的长度为1，即单位向量
     var x = 1 / Math.sqrt(15), y = 2 / Math.sqrt(15), z = 3 / Math.sqrt(15);
     gl.uniform3f(u_lightDirection, x, y, -z);
@@ -165,35 +165,46 @@
 
     //声明初始化着色器函数
     function initShader(gl, vertexShaderSource, fragmentShaderSource) {
+      //创建顶点着色器对象
       var vertexShader = gl.createShader(gl.VERTEX_SHADER);
+      //创建片元着色器对象
       var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+      //引入顶点、片元着色器源代码
       gl.shaderSource(vertexShader, vertexShaderSource);
       gl.shaderSource(fragmentShader, fragmentShaderSource);
+      //编译顶点、片元着色器
       gl.compileShader(vertexShader);
       gl.compileShader(fragmentShader);
+
+      //创建程序对象program
       var program = gl.createProgram();
+      //附着顶点着色器和片元着色器到program
       gl.attachShader(program, vertexShader);
       gl.attachShader(program, fragmentShader);
+      //链接program
       gl.linkProgram(program);
+      //使用program
       gl.useProgram(program);
+      //返回程序program对象
       return program;
     }
 
-    var n = gl.getProgramParameter(program, gl.ACTIVE_ATTRIBUTES);
 
-    console.log('attribute变量个数', n);
+    // var n = gl.getProgramParameter( program, gl.ACTIVE_ATTRIBUTES );
+    //
+    // console.log('attribute变量个数',n);
+    // var info = gl.getActiveAttrib( program, 0 );
+    // console.log('第1个attribute变量的信息',info);
+    // console.log('attribute变量名字',info.name);
 
-    var n2 = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
-
-    console.log('uniform变量个数', n2);
-
-    var info = gl.getActiveAttrib(program, 0);
-    console.log('第1个attribute变量的信息', info);
-    console.log('attribute变量名字', info.name);
-
+    // 获得uniform变量的个数
+    var n = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
+    console.log('uniform变量个数', n);
+    // 获得uniform变量的相关信息，比如变量名
     var info = gl.getActiveUniform(program, 0);
     console.log('第1个uniform变量的信息', info);
     console.log('uniform变量名字', info.name);
+
   </script>
 </body>
 
