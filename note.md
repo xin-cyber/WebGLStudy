@@ -321,5 +321,4 @@ g h i              c f i
   ```
 ### 2.gl.drawArray
 
-  ![image-20221016191041013](../../AppData/Roaming/Typora/typora-user-images/image-20221016191041013.png)
-
+![image-20221205165723937](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221205165723937.png)
