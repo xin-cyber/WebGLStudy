@@ -322,3 +322,13 @@ g h i              c f i
 ### 2.gl.drawArray
 
 ![image-20221205165723937](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221205165723937.png)
+
+### 3.fract
+
+> 整数部分取小数，负数部分取小数+1.
+>
+> fract的返回值的值域是0-1
+
+### 4.smoothstep
+
+![image-20221209090123547](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221209090123547.png)
