@@ -332,3 +332,13 @@ g h i              c f i
 ### 4.smoothstep
 
 ![image-20221209090123547](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221209090123547.png)
+
+### 5.float
+
+```js
+#ifdef GL_ES
+precision mediump float;
+#endif
+```
+
+float类型在 shaders 中非常重要，所以精度非常重要。**更低的精度会有更快的渲染速度，但是会以质量为代价。**你可以选择每一个浮点值的精度。在第一行（precision mediump float;）我们就是设定了所有的浮点值都是中等精度。但我们也可以选择把这个值设为“低”（precision lowp float;）或者“高”（precision highp float;）
