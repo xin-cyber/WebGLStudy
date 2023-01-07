@@ -329,11 +329,26 @@ g h i              c f i
 >
 > fract的返回值的值域是0-1
 
+### 4.clamp
+
+> 夹紧，夹子
+>
+> clamp函数将一个值限制在另外两个值之间
+>
+> 返回值 ： min( max ( x , minVal ),  maxVal ）
+
+```glsl
+float clamp(float x, float minVal, float maxVal)  
+vec2 clamp(vec2 x, vec2 minVal, vec2 maxVal)  
+```
+
 ### 4.smoothstep
 
 ![image-20221209090123547](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20221209090123547.png)
 
 ### 5.float
+
+> 如果定义了`GL_ES`这个变量，才会插入运行第2行的代码，这个通常用在移动端或浏览器的编译中。
 
 ```js
 #ifdef GL_ES
@@ -342,3 +357,10 @@ precision mediump float;
 ```
 
 float类型在 shaders 中非常重要，所以精度非常重要。**更低的精度会有更快的渲染速度，但是会以质量为代价。**你可以选择每一个浮点值的精度。在第一行（precision mediump float;）我们就是设定了所有的浮点值都是中等精度。但我们也可以选择把这个值设为“低”（precision lowp float;）或者“高”（precision highp float;）
+
+### 6.⭐gl_FragCoord
+
+![image-20230107222855290](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/image-20230107222855290.png)
+
+> `gl_FragCoord`存储了活动线程正在处理的**像素**或**屏幕碎片**的坐标 , 有了它我们就知道了屏幕上的哪一个线程正在运转。
+
