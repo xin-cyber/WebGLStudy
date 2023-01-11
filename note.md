@@ -389,3 +389,12 @@ float y = step(0.5,st.x)
 ![img](https://picgo-1307940198.cos.ap-nanjing.myqcloud.com/sincos.gif)
 
 ![Kynd - www.flickr.com/photos/kynd/9546075099/ (2013)](https://thebookofshaders.com/05/kynd.png)
+
+### 11.限定符
+
+```glsl
+int newFunction(in vec4 aVec4,   // read-only
+                out vec3 aVec3,    // write-only
+                inout int aInt);   // read-write
+```
+
